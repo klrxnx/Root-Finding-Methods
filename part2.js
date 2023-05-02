@@ -207,11 +207,20 @@ function Secant(){
             computeError = (secFormulaAnswer * 10 - tempB * 10) / 10;
             error = math.abs(computeError);
 
+            console.log("Iteration: " + iteration);
+            console.log("A = " + tempA);
+            console.log("B = " + tempB);
+            console.log("C = " + functionC);
+            console.log("D = " + functionD);
+            console.log("Error: " + error);
+
             //Subtitution of values
             tempA = tempB;
             tempB = secFormulaAnswer;
 
+            
             iteration++;
+            
         }
         //Stop loop if error condition is met
         else{
@@ -318,7 +327,7 @@ function Calculate(){
             intN = 10000;
         }
     
-       //Calculate Bisection
+        //Calculate Bisection
         if(method === 'b'){
             //Check if there is a root or not
             if(functionA < 0 & functionB > 0 || functionA > 0 & functionB < 0){
