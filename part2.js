@@ -208,7 +208,7 @@ function Secant(){
             error = math.abs(computeError);
 
             //Subtitution of values
-            tempA = intB;
+            tempA = tempB;
             tempB = secFormulaAnswer;
 
             iteration++;
@@ -318,31 +318,31 @@ function Calculate(){
             intN = 10000;
         }
     
-        //Check if there is a root or not
-        if(functionA < 0 & functionB > 0 || functionA > 0 & functionB < 0){
-            //Calculate Bisection
-            if(method === 'b'){
+       //Calculate Bisection
+        if(method === 'b'){
+            //Check if there is a root or not
+            if(functionA < 0 & functionB > 0 || functionA > 0 & functionB < 0){
                 Bisection();
                 DisplayBisection();
             }
-            //Calculate Secant
-            else{
-                Secant();
-                DisplaySecant();
-            } 
-        }       
-        //output when same input
-        else if (functionA == functionB){
-            sameInput();
-        }
-        //output when function is 0
-        else if (functionA == 0 || functionB == 0){
-            ZeroChecker();
-        }
-        //output when no root
-        else{
-            NoRootChecker();
-        }
+            //output when same input
+            else if (functionA == functionB){
+                sameInput();
+            }
+            //output when function is 0
+            else if (functionA == 0 || functionB == 0){
+                ZeroChecker();
+            }
+                //output when no root
+                else{
+                    NoRootChecker();
+                }
+            }
+        //Calculate Secant
+        else if (method == 's'){
+            Secant();
+            DisplaySecant();
+        }    
     }catch{alert("Invalid Function\nPlease use the format below:\nf(x)=value(x)+x")}
    
 }
