@@ -309,5 +309,4 @@ function Calculate(){
         Secant();
         DisplaySecant();
     }    
-    }catch{alert("Invalid Function\nPlease use the format below:\nf(x)=value(x)+x")}
 }
